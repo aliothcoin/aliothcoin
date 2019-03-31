@@ -152,7 +152,7 @@ public:
 
         LogPrintf("Display testNet genesis hash so we can input it below %s\n", hashGenesisBlock.ToString().c_str());
 
-		assert(hashGenesisBlock == uint256("0xfa4b8a8a1b3d3acadd91a033ace839fac2754ec7cf3680e42553117c6a0d156d"));
+		assert(hashGenesisBlock == uint256("0x4ab388e0ba2296212d0ce2bdc61ab6741d9fbaedff89d30b1b577ceaaf093679"));
 
 		vFixedSeeds.clear();
 		vSeeds.clear();
