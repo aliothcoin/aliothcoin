@@ -56,7 +56,8 @@ void OptionsModel::Init()
         settings.setValue("nDisplayUnit", BitcoinUnits::BTC);
     nDisplayUnit = settings.value("nDisplayUnit").toInt();
     
-    fUseBlackTheme = settings.value("fUseBlackTheme", false).toBool();
+//    fUseBlackTheme = settings.value("fUseBlackTheme", false).toBool();
+    fUseBlackTheme = settings.value("fUseBlackTheme", true).toBool();
     
     if (!settings.contains("fCoinControlFeatures"))
         settings.setValue("fCoinControlFeatures", false);

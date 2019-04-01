@@ -31,6 +31,7 @@ using namespace std;
 #include <QClipboard>
 #include <QMessageBox>
 #include <QItemSelectionModel>
+#include <QPalette>
 
 MasternodeManager::MasternodeManager(QWidget *parent) :
     QWidget(parent),
@@ -114,6 +115,17 @@ void MasternodeManager::updateAdrenalineNode(QString alias, QString addr, QStrin
     QTableWidgetItem *rewardPercentageItem = new QTableWidgetItem(rewardPercentage);
     QTableWidgetItem *statusItem = new QTableWidgetItem(status);
 
+
+        QPalette Pal2;
+        Pal2.setColor(QPalette::Text, Qt::white);
+        Pal2.setColor(QPalette::Base, Qt::black);
+        Pal2.setColor(QPalette::AlternateBase, QColor(0, 55, 0, 255));
+
+        ui->tableWidget_2->setPalette(Pal2);
+        ui->tableWidget_2->setAlternatingRowColors(true);
+        ui->tableWidget_2->alternatingRowColors();
+
+
     ui->tableWidget_2->setItem(nodeRow, 0, aliasItem);
     ui->tableWidget_2->setItem(nodeRow, 1, addrItem);
     ui->tableWidget_2->setItem(nodeRow, 2, rewardPercentageItem);
@@ -148,6 +160,7 @@ void MasternodeManager::updateNodeList()
 
     ui->countLabel->setText("Updating...");
     ui->tableWidgetMasternodes->setSortingEnabled(false);
+//    ui->tableWidgetMasternodes->setSortingEnabled(true);
     ui->tableWidgetMasternodes->clearContents();
     ui->tableWidgetMasternodes->setRowCount(0);
     std::vector<CMasternode> vMasternodes = mnodeman.GetFullMasternodeVector();
@@ -169,6 +182,18 @@ void MasternodeManager::updateNodeList()
         ExtractDestination(pubkey, address1);
         CAliothAddress address2(address1);
         QTableWidgetItem *pubkeyItem = new QTableWidgetItem(QString::fromStdString(address2.ToString()));
+
+
+        QPalette Pal1;
+        Pal1.setColor(QPalette::Text, Qt::white);
+        Pal1.setColor(QPalette::Base, Qt::black);
+        Pal1.setColor(QPalette::AlternateBase, QColor(0, 55, 0, 255));
+
+        ui->tableWidgetMasternodes->setPalette(Pal1);
+        ui->tableWidgetMasternodes->setAlternatingRowColors(true);
+        ui->tableWidgetMasternodes->alternatingRowColors();
+
+
 
         ui->tableWidgetMasternodes->insertRow(0);
         ui->tableWidgetMasternodes->setItem(0, 0, addressItem);

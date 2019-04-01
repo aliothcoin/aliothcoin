@@ -105,7 +105,8 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     QApplication::setAttribute(Qt::AA_DontShowIconsInMenus);
 #endif
     setObjectName("Alioth");
-    setStyleSheet("#Alioth { background-color: qradialgradient(cx: -0.8, cy: 0, fx: -0.8, fy: 0, radius: 1.4, stop: 0 #dedede, stop: 1 #efefef);  }");
+//    setStyleSheet("#Alioth { background-color: qradialgradient(cx: -0.8, cy: 0, fx: -0.8, fy: 0, radius: 1.4, stop: 0 #dedede, stop: 1 #efefef);  }");
+    setStyleSheet("#Alioth { background-color: qradialgradient(cx: -0.8, cy: 0, fx: -0.8, fy: 0, radius: 1.4, stop: 0 #000000, stop: 1 #060606);  }");
     // Accept D&D of URIs
     setAcceptDrops(true);
 
@@ -230,7 +231,7 @@ BitcoinGUI::BitcoinGUI(QWidget *parent):
     statusBar()->addWidget(progressBar);
     statusBar()->addPermanentWidget(frameBlocks);
     statusBar()->setObjectName("statusBar");
-    statusBar()->setStyleSheet("#statusBar { color: #ffffff; background-color: qradialgradient(cx: -0.8, cy: 0, fx: -0.8, fy: 0, radius: 0.6, stop: 0 #101010, stop: 1 #404040);  }");
+    statusBar()->setStyleSheet("#statusBar { color: #ffffff; background-color: qradialgradient(cx: -0.8, cy: 0, fx: -0.8, fy: 0, radius: 0.6, stop: 0 #101010, stop: 1 #000000);  }");
 
     syncIconMovie = new QMovie(fUseBlackTheme ? ":/movies/update_spinner_black" : ":/movies/update_spinner", "mng", this);
 
@@ -315,7 +316,7 @@ void BitcoinGUI::createActions()
     messageAction->setCheckable(true);
     tabGroup->addAction(messageAction);
 
-    blockAction = new QAction(QIcon(":/icons/block"), tr("&Block Explorer"), this);
+    blockAction = new QAction(QIcon(":/icons/block"), tr("&Explorer"), this);
     blockAction->setToolTip(tr("Explore the BlockChain"));
     blockAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
     blockAction->setCheckable(true);
@@ -429,9 +430,12 @@ void BitcoinGUI::createMenuBar()
 
 static QWidget* makeToolBarSpacer()
 {
-    QWidget* spacer = new QWidget();
+    //QWidget* spacer = new QWidget();
+    QWidget *spacer = new QWidget();
     spacer->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
-    spacer->setStyleSheet("QWidget { background: none; }");
+//    spacer->setStyleSheet("QWidget { background: none; }");
+    spacer->setStyleSheet("QWidget { background: #000000; }");
+    //spacer->setStyleSheet("QWidget { background: #005500; }");
     return spacer;
 }
 
@@ -443,11 +447,17 @@ void BitcoinGUI::createToolBars()
     toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
     toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
     toolbar->setObjectName("tabs");
-    toolbar->setStyleSheet("QToolButton { color: #000000; font-size: 14px; font-family: Georgia,Times,Times New Roman,serif; font-weight: 400; font-variant: small-caps; padding: 3px; border: none;}"
+/*    toolbar->setStyleSheet("QToolButton { color: #000000; font-size: 14px; font-family: Georgia,Times,Times New Roman,serif; font-weight: 400; font-variant: small-caps; padding: 3px; border: none;}"
                            "QToolButton:hover { color: #ffffff; background-color: #f49284; border: none; padding-top: 3px; padding-bottom: 3px; }"
                            "QToolButton:checked { color: #ffffff; background-color: #c63609; border: none; padding-top: 3px; padding-bottom: 3px; }"
                            "QToolButton:pressed { color: #ffffff; background-color: #c63609; border: none; padding-top: 3px; padding-bottom: 3px; }"
                            "#tabs { color: #000000; background-color: #ffffff; border: none; padding-top: 0px; padding-bottom: 0px; }");
+*/
+    toolbar->setStyleSheet("QToolButton { color: #ffffff; font-size: 14px; font-family: Georgia,Times,Times New Roman,serif; font-weight: 400; font-variant: small-caps; padding: 3px; border: none;}"
+                           "QToolButton:hover { color: #00ff00; background-color: #000000; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "QToolButton:checked { color: #ffffff; background-color: #008800; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "QToolButton:pressed { color: #ffff00; background-color: #00ff00; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "#tabs { color: #000000; background-color: #000000; border: none; padding-top: 0px; padding-bottom: 0px; }");
 
     QLabel* header = new QLabel();
     header->setMinimumSize(142, 142);
@@ -475,7 +485,7 @@ void BitcoinGUI::createToolBars()
 
     QWidget *spacer = makeToolBarSpacer();
     netLabel->setObjectName("netLabel");
-    netLabel->setStyleSheet("#netLabel { color: #efefef; }");
+    netLabel->setStyleSheet("#netLabel { color: #00ee00; }");
     toolbar->addWidget(spacer);
     toolbar->setOrientation(Qt::Vertical);
     toolbar->setMovable(false);
@@ -721,7 +731,7 @@ void BitcoinGUI::setNumBlocks(int count)
 
         progressBarLabel->setText(tr(clientModel->isImporting() ? "Importing blocks..." : "Synchronizing with network..."));
         progressBarLabel->setVisible(true);
-        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; }");
+        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; border: 3px solid #005500; }");        
         progressBar->setFormat(tr("%1 behind").arg(timeBehindText));
         progressBar->setMaximum(totalSecs);
         progressBar->setValue(totalSecs - secs);

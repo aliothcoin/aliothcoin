@@ -30,6 +30,8 @@
 #include <QTableView>
 #include <QUrl>
 #include <QVBoxLayout>
+#include <QPalette>
+#include <QColor>
 
 #include <QMessageBox>
 
@@ -192,8 +194,32 @@ void TransactionView::setModel(WalletModel *model)
         transactionProxyModel->setSortRole(Qt::EditRole);
 
         transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+
+
+
+        QPalette Pal;
+        Pal.setColor(QPalette::Text, Qt::white);
+        Pal.setColor(QPalette::Base, Qt::black);
+//        Pal.setColor(QPalette::AlternateBase, Qt::darkGreen);
+        Pal.setColor(QPalette::AlternateBase, QColor(0, 55, 0, 255));
+        Pal.setColor(QPalette::Highlight, QColor(0, 88, 0, 255));
+        Pal.setColor(QPalette::HighlightedText, QColor(220, 255, 0, 255));
+
+
+
+        transactionView->setPalette(Pal);
+
+
+
+
         transactionView->setModel(transactionProxyModel);
         transactionView->setAlternatingRowColors(true);
+
+
+        transactionView->alternatingRowColors();
+
+
+
         transactionView->setSelectionBehavior(QAbstractItemView::SelectRows);
         transactionView->setSelectionMode(QAbstractItemView::ExtendedSelection);
         transactionView->setSortingEnabled(true);
