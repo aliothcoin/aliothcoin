@@ -454,9 +454,9 @@ void BitcoinGUI::createToolBars()
                            "#tabs { color: #000000; background-color: #ffffff; border: none; padding-top: 0px; padding-bottom: 0px; }");
 */
     toolbar->setStyleSheet("QToolButton { color: #ffffff; font-size: 14px; font-family: Georgia,Times,Times New Roman,serif; font-weight: 400; font-variant: small-caps; padding: 3px; border: none;}"
-                           "QToolButton:hover { color: #00ff00; background-color: #000000; border: none; padding-top: 3px; padding-bottom: 3px; }"
-                           "QToolButton:checked { color: #ffffff; background-color: #008800; border: none; padding-top: 3px; padding-bottom: 3px; }"
-                           "QToolButton:pressed { color: #ffff00; background-color: #00ff00; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "QToolButton:hover { color: #ff00ff; background-color: #000000; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "QToolButton:checked { color: #ffffff; background-color: #880088; border: none; padding-top: 3px; padding-bottom: 3px; }"
+                           "QToolButton:pressed { color: #ffff00; background-color: #ff00ff; border: none; padding-top: 3px; padding-bottom: 3px; }"
                            "#tabs { color: #000000; background-color: #000000; border: none; padding-top: 0px; padding-bottom: 0px; }");
 
     QLabel* header = new QLabel();
@@ -731,7 +731,7 @@ void BitcoinGUI::setNumBlocks(int count)
 
         progressBarLabel->setText(tr(clientModel->isImporting() ? "Importing blocks..." : "Synchronizing with network..."));
         progressBarLabel->setVisible(true);
-        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; border: 3px solid #005500; }");        
+        progressBarLabel->setStyleSheet("QLabel { color: #ffffff; border: 3px solid #550055; }");        
         progressBar->setFormat(tr("%1 behind").arg(timeBehindText));
         progressBar->setMaximum(totalSecs);
         progressBar->setValue(totalSecs - secs);

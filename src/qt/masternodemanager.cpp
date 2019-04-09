@@ -119,7 +119,7 @@ void MasternodeManager::updateAdrenalineNode(QString alias, QString addr, QStrin
         QPalette Pal2;
         Pal2.setColor(QPalette::Text, Qt::white);
         Pal2.setColor(QPalette::Base, Qt::black);
-        Pal2.setColor(QPalette::AlternateBase, QColor(0, 55, 0, 255));
+        Pal2.setColor(QPalette::AlternateBase, QColor(55, 0, 55, 255));
 
         ui->tableWidget_2->setPalette(Pal2);
         ui->tableWidget_2->setAlternatingRowColors(true);
@@ -187,7 +187,7 @@ void MasternodeManager::updateNodeList()
         QPalette Pal1;
         Pal1.setColor(QPalette::Text, Qt::white);
         Pal1.setColor(QPalette::Base, Qt::black);
-        Pal1.setColor(QPalette::AlternateBase, QColor(0, 55, 0, 255));
+        Pal1.setColor(QPalette::AlternateBase, QColor(55, 0, 55, 255));
 
         ui->tableWidgetMasternodes->setPalette(Pal1);
         ui->tableWidgetMasternodes->setAlternatingRowColors(true);
