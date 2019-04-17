@@ -1363,12 +1363,18 @@ int64_t GetProofOfWorkReward(int nHeight, int64_t nFees)
         nSubsidy = 1 * COIN; // premine
     }
     else if (nHeight >= 2 && nHeight < 3) {
-        nSubsidy = 80000 * COIN; // premine
+        nSubsidy = 3000 * COIN; // premine
     }
-    else if (nHeight >= 3 && nHeight < 3000000) {
+    else if (nHeight >= 3 && nHeight < 100) {
+        nSubsidy = 0.1 * COIN; 
+    }
+    else if (nHeight >= 100 && nHeight < 39900) {
+        nSubsidy = 0 * COIN; 
+    }
+    else if (nHeight >= 39900 && nHeight < 41000) {
         nSubsidy = 0.0001 * COIN; 
     }
-    else if (nHeight >= 3000000)     nSubsidy = 0.01 * COIN;
+    else if (nHeight >= 41000)     nSubsidy = 0 * COIN;
 
     // add fees.
     return nSubsidy + nFees;
@@ -1380,32 +1386,27 @@ int64_t GetProofOfStakeReward(const CBlockIndex* pindexPrev, int64_t nCoinAge, i
     int64_t nSubsidy = 0;
     
 
-if(nBestHeight      >=    20     &&  nBestHeight <     1000 ){ nSubsidy =    2   * COIN; }
-else if(nBestHeight >=  1001     &&  nBestHeight <     2000 ){ nSubsidy =    3   * COIN; }
-else if(nBestHeight >=  2001     &&  nBestHeight <     6000 ){ nSubsidy =    8   * COIN; }
-else if(nBestHeight >=  6001     &&  nBestHeight <    11000 ){ nSubsidy =   15   * COIN; }
-else if(nBestHeight >=  11001    &&  nBestHeight <    14000 ){ nSubsidy =   30   * COIN; }
-else if(nBestHeight >=  14001    &&  nBestHeight <    17000 ){ nSubsidy =   36   * COIN; }
-else if(nBestHeight >=  17001    &&  nBestHeight <    20000 ){ nSubsidy =   40   * COIN; }
-else if(nBestHeight >=  20001    &&  nBestHeight <    23000 ){ nSubsidy =   42   * COIN; }
-else if(nBestHeight >=  23001    &&  nBestHeight <    26000 ){ nSubsidy =   45   * COIN; }
-else if(nBestHeight >=  26001    &&  nBestHeight <    29000 ){ nSubsidy =   48   * COIN; }
-else if(nBestHeight >=  29001    &&  nBestHeight <    32000 ){ nSubsidy =   50   * COIN; }
-else if(nBestHeight >=  32001    &&  nBestHeight <    36000 ){ nSubsidy =   54   * COIN; }
-else if(nBestHeight >=  36001    &&  nBestHeight <    46000 ){ nSubsidy =   57   * COIN; }
-else if(nBestHeight >=  46001    &&  nBestHeight <    71000 ){ nSubsidy =   60   * COIN; }
-else if(nBestHeight >=  71001    &&  nBestHeight <    74000 ){ nSubsidy =   52   * COIN; }
-else if(nBestHeight >=  74001    &&  nBestHeight <    78000 ){ nSubsidy =   35   * COIN; }
-else if(nBestHeight >=  78001    &&  nBestHeight <   101000 ){ nSubsidy =   22   * COIN; }
-else if(nBestHeight >=  101001   &&  nBestHeight <   201000 ){ nSubsidy =   10   * COIN; }
-else if(nBestHeight >=  201001   &&  nBestHeight <   501000 ){ nSubsidy =    3   * COIN; }
-else if(nBestHeight >=  501001   &&  nBestHeight <  2500000 ){ nSubsidy =    1   * COIN; }
-
-    else if(nBestHeight >= 2500000){
-        // end game - further discussion needed
-        nSubsidy = 0 * COIN;
-    }
-    else { nSubsidy = 10 * COIN; }
+     if(nBestHeight >=   15   &&  nBestHeight <  1000    ){ nSubsidy =   0.1  * COIN; }
+else if(nBestHeight >=  1001     &&  nBestHeight <  6000    ){ nSubsidy =   0.3  * COIN; }
+else if(nBestHeight >=  6001     &&  nBestHeight <  11000   ){ nSubsidy =   0.5  * COIN; }
+else if(nBestHeight >=  11001    &&  nBestHeight <  14000   ){ nSubsidy =   1    * COIN; }
+else if(nBestHeight >=  14001    &&  nBestHeight <  17000   ){ nSubsidy =   1.2  * COIN; }
+else if(nBestHeight >=  17001    &&  nBestHeight <  20000   ){ nSubsidy =   1.3  * COIN; }
+else if(nBestHeight >=  20001    &&  nBestHeight <  23000   ){ nSubsidy =   1.4  * COIN; }
+else if(nBestHeight >=  23001    &&  nBestHeight <  26000   ){ nSubsidy =   1.5  * COIN; }
+else if(nBestHeight >=  26001    &&  nBestHeight <  29000   ){ nSubsidy =   1.6  * COIN; }
+else if(nBestHeight >=  29001    &&  nBestHeight <  32000   ){ nSubsidy =   1.7  * COIN; }
+else if(nBestHeight >=  32001    &&  nBestHeight <  40000   ){ nSubsidy =   1.8  * COIN; }
+else if(nBestHeight >=  40001    &&  nBestHeight <  75000   ){ nSubsidy =   1.9  * COIN; }
+else if(nBestHeight >=  75001    &&  nBestHeight <  100000  ){ nSubsidy =   2.5  * COIN; }
+else if(nBestHeight >=  100001   &&  nBestHeight <  125000  ){ nSubsidy =   3    * COIN; }
+else if(nBestHeight >=  125001   &&  nBestHeight <  150000  ){ nSubsidy =   3.5  * COIN; }
+else if(nBestHeight >=  150001   &&  nBestHeight <  200000  ){ nSubsidy =   4    * COIN; }
+else if(nBestHeight >=  200001   &&  nBestHeight <  300000  ){ nSubsidy =   3    * COIN; }
+else if(nBestHeight >=  300001   &&  nBestHeight <  400000  ){ nSubsidy =   2    * COIN; }
+else if(nBestHeight >=  400001   &&  nBestHeight <  500000  ){ nSubsidy =   1    * COIN; }
+else if(nBestHeight >= 500001)                               { nSubsidy =   0.5  * COIN; }
+else { nSubsidy = 0.1 * COIN; }
 
     return nSubsidy + nFees;
 }
@@ -4531,7 +4532,14 @@ bool SendMessages(CNode* pto, bool fSendTrickle)
 
 int64_t GetMasternodePayment(int nHeight, int64_t blockValue)
 {
-    int64_t ret = blockValue * 17/20;
+    int64_t ret;
+
+    if(nHeight < 42000) {
+        ret = blockValue * 17/20;
+    }
+    else {
+        ret = blockValue * 99/100;
+    }
 
     return ret;
 }
