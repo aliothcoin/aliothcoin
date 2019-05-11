@@ -1391,21 +1391,24 @@ else if(nBestHeight >=  1001     &&  nBestHeight <  6000    ){ nSubsidy =   0.3 
 else if(nBestHeight >=  6001     &&  nBestHeight <  11000   ){ nSubsidy =   0.5  * COIN; }
 else if(nBestHeight >=  11001    &&  nBestHeight <  14000   ){ nSubsidy =   1    * COIN; }
 else if(nBestHeight >=  14001    &&  nBestHeight <  17000   ){ nSubsidy =   1.2  * COIN; }
-else if(nBestHeight >=  17001    &&  nBestHeight <  20000   ){ nSubsidy =   1.3  * COIN; }
-else if(nBestHeight >=  20001    &&  nBestHeight <  23000   ){ nSubsidy =   1.4  * COIN; }
-else if(nBestHeight >=  23001    &&  nBestHeight <  26000   ){ nSubsidy =   1.5  * COIN; }
-else if(nBestHeight >=  26001    &&  nBestHeight <  29000   ){ nSubsidy =   1.6  * COIN; }
-else if(nBestHeight >=  29001    &&  nBestHeight <  32000   ){ nSubsidy =   1.7  * COIN; }
-else if(nBestHeight >=  32001    &&  nBestHeight <  40000   ){ nSubsidy =   1.8  * COIN; }
-else if(nBestHeight >=  40001    &&  nBestHeight <  75000   ){ nSubsidy =   1.9  * COIN; }
-else if(nBestHeight >=  75001    &&  nBestHeight <  100000  ){ nSubsidy =   2.5  * COIN; }
-else if(nBestHeight >=  100001   &&  nBestHeight <  125000  ){ nSubsidy =   3    * COIN; }
-else if(nBestHeight >=  125001   &&  nBestHeight <  150000  ){ nSubsidy =   3.5  * COIN; }
-else if(nBestHeight >=  150001   &&  nBestHeight <  200000  ){ nSubsidy =   4    * COIN; }
-else if(nBestHeight >=  200001   &&  nBestHeight <  300000  ){ nSubsidy =   3    * COIN; }
-else if(nBestHeight >=  300001   &&  nBestHeight <  400000  ){ nSubsidy =   2    * COIN; }
-else if(nBestHeight >=  400001   &&  nBestHeight <  500000  ){ nSubsidy =   1    * COIN; }
-else if(nBestHeight >= 500001)                               { nSubsidy =   0.5  * COIN; }
+else if(nBestHeight >=  17001    &&  nBestHeight <  18000   ){ nSubsidy =   1.3  * COIN; }
+else if(nBestHeight >=  18001    &&  nBestHeight <  20000   ){ nSubsidy =   0.05  * COIN; }
+else if(nBestHeight >=  20001    &&  nBestHeight <  23000   ){ nSubsidy =   0.07  * COIN; }
+else if(nBestHeight >=  23001    &&  nBestHeight <  26000   ){ nSubsidy =   0.09  * COIN; }
+else if(nBestHeight >=  26001    &&  nBestHeight <  29000   ){ nSubsidy =   0.11  * COIN; }
+else if(nBestHeight >=  29001    &&  nBestHeight <  32000   ){ nSubsidy =   0.13  * COIN; }
+
+else if(nBestHeight >=  32001    &&  nBestHeight <  40000   ){ nSubsidy =   0.15  * COIN; }
+else if(nBestHeight >=  40001    &&  nBestHeight <  75000   ){ nSubsidy =   0.4   * COIN; }
+else if(nBestHeight >=  75001    &&  nBestHeight <  100000  ){ nSubsidy =   0.6   * COIN; }
+else if(nBestHeight >=  100001   &&  nBestHeight <  125000  ){ nSubsidy =   0.8   * COIN; }
+else if(nBestHeight >=  125001   &&  nBestHeight <  150000  ){ nSubsidy =   1     * COIN; }
+else if(nBestHeight >=  150001   &&  nBestHeight <  200000  ){ nSubsidy =   1.5   * COIN; }
+else if(nBestHeight >=  200001   &&  nBestHeight <  300000  ){ nSubsidy =   2     * COIN; }
+else if(nBestHeight >=  300001   &&  nBestHeight <  400000  ){ nSubsidy =   1.5   * COIN; }
+else if(nBestHeight >=  400001   &&  nBestHeight <  500000  ){ nSubsidy =   1     * COIN; }
+else if(nBestHeight >=  500001   &&  nBestHeight <  600000  ){ nSubsidy =   0.8   * COIN; }
+else if(nBestHeight >= 600001)                               { nSubsidy =   0.5   * COIN; }
 else { nSubsidy = 0.1 * COIN; }
 
     return nSubsidy + nFees;
