@@ -20,15 +20,13 @@ Block Time : 90 Sec Approx
 
 Block Size : 2MB
 
-Block Reward: 64 ALTH increasing to 80 at block 88900
+Block Reward: 0.1 ALTH increasing to 2 at block 200,000
 
-Total Coins: 70,000,000
+Total Coins: 1,900,000
 
-Minimum Stake Age : 6 Hour
+Minimum Stake Age : 12 Hour
 
-Coin Maturity : 89 Block
+RPC Port: 46738
 
-RPC Port: 46732
-
-Network Port: 46561
+Network Port: 46566
 
